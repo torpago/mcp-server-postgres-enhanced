@@ -1,0 +1,51 @@
+{
+  "name": "enhanced-postgres-mcp-server",
+  "version": "1.0.0",
+  "description": "Enhanced PostgreSQL MCP server with read and write capabilities. Based on @modelcontextprotocol/server-postgres by Anthropic.",
+  "license": "MIT",
+  "author": "Gareth Cottrell",
+  "contributors": [
+    "Anthropic, PBC (https://anthropic.com)"
+  ],
+  "homepage": "https://github.com/garethcottrell/enhanced-postgres-mcp-server",
+  "bugs": "https://github.com/garethcottrell/enhanced-postgres-mcp-server/issues",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "enhanced-postgres-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "docker:build": "docker build -t mcp/postgres -f Dockerfile .",
+    "docker:run": "docker run -i --rm mcp/postgres"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.0.1",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/pg": "^8.11.10",
+    "shx": "^0.3.4",
+    "typescript": "^5.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "anthropic",
+    "postgres",
+    "postgresql",
+    "database",
+    "llm"
+  ]
+}

@@ -1,10 +1,14 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "."
+    "target": "ES2015",
+    "module": "ESNext", // Changed from "commonjs" to "ESNext"
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node" // Add this
   },
-  "include": [
-    "./**/*.ts"
-  ]
+  "include": ["*.ts"],
+  "exclude": ["node_modules"]
 }
